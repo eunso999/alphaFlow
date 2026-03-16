@@ -34,7 +34,7 @@ hydra_args_str: hydra.run.dir=${experiment_dir} hydra.output_subdir=null hydra/j
 
 wandb:
   enabled: true
-  project: alphaflow
+  project: alphaflow-s41
   log_ema_stats: false
   tags: []
   distributed: false # Should we do wandb logging in each rank?

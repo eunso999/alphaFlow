@@ -1,6 +1,7 @@
-env/
-snapshots/
-outputs/
-experiments/
-data/
-.cache/
+./env/
+./snapshots/
+./outputs/
+./experiments/
+./data/
+./.cache/
+./configs/env/user.yaml
