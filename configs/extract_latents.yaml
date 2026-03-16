@@ -1,0 +1,7 @@
+defaults:
+  - train.yaml
+
+dst: ./data/imagenet_folder_1x256x256_sd_vae_fixed # Where to store the results?
+subset: train
+tmp_dir: /lssd/tmp
+save_metadata: true

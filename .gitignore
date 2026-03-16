@@ -1,0 +1,6 @@
+env/
+snapshots/
+outputs/
+experiments/
+data/
+.cache/

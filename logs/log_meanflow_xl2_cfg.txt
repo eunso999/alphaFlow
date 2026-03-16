@@ -1,0 +1,724 @@
+There are uncommited changes. Continue? [y/N]: 6ad17907b2ae                                                Mon Mar 16 13:09:13 2026  570.211.01
+[0] NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition | 36°C,   0 % |    14 / 97887 MB |
+[1] NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition | 35°C,   0 % |    14 / 97887 MB |
+/mnt/ssd1/eun/2026/meanflow/alphaflow/env/lib/python3.11/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'extract_latents.yaml': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+/mnt/ssd1/eun/2026/meanflow/alphaflow/env/lib/python3.11/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'extract_latents.yaml': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+2026-03-16 13:09:21.420 | INFO     | src.utils.distributed:loginfo0:86 - Loading dataset... 
+2026-03-16 13:09:39.819 | INFO     | src.utils.distributed:loginfo0:86 - Latents for subset 'train' already exist. Skipping...
+[rank0]:[W316 13:09:40.429281013 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+2026-03-16 13:09:50.442 | INFO     | src.utils.distributed:loginfo0:86 - Started training! Current time is: 2026-03-16 13:09:50
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: 999colorrainbow to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in wandb/wandb/run-20260316_130950-0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty
+wandb: ⭐️ View project at https://wandb.ai/999colorrainbow/alphaflow
+wandb: 🚀 View run at https://wandb.ai/999colorrainbow/alphaflow/runs/0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty
+2026-03-16 13:09:52.620 | INFO     | src.utils.distributed:loginfo0:86 - No snapshots found in /mnt/ssd1/eun/2026/meanflow/alphaflow/experiments/0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty/output. Training from scratch.
+2026-03-16 13:09:52.623 | INFO     | src.utils.distributed:loginfo0:86 - Loading dataset... 
+
+2026-03-16 13:10:31.052 | INFO     | src.utils.distributed:loginfo0:86 - Experiment directory:    /mnt/ssd1/eun/2026/meanflow/alphaflow/experiments/0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Sample shape:            [1, 256, 256]
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Label shape:             [1000]
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Network architecture:    dit
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Preconditioning:         alphaflow
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Loss:                    alphaflow
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Number of GPUs:          2
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Number of nodes:         1
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Activations dtype:       bfloat16
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Params dtype:            None
+2026-03-16 13:10:31.053 | INFO     | src.utils.distributed:loginfo0:86 - Resumed snapshot:        None
+
+2026-03-16 13:10:31.054 | INFO     | src.utils.distributed:loginfo0:86 - Batch size:            256
+2026-03-16 13:10:31.286 | INFO     | src.utils.distributed:loginfo0:86 - Batch per GPU:         32
+2026-03-16 13:10:31.286 | INFO     | src.utils.distributed:loginfo0:86 - Num accum rounds:      4
+2026-03-16 13:10:31.286 | INFO     | src.utils.distributed:loginfo0:86 - Epoch size:            1281167
+2026-03-16 13:10:31.286 | INFO     | src.utils.distributed:loginfo0:86 - Data type:             IMAGE_LATENT
+2026-03-16 13:10:31.286 | INFO     | src.utils.distributed:loginfo0:86 - Resolution:            [1, 256, 256]
+
+2026-03-16 13:10:31.287 | INFO     | src.utils.distributed:loginfo0:86 - Constructing network... 
+2026-03-16 13:10:33.687 | INFO     | src.utils.distributed:loginfo0:86 - Incompatible keys: <All keys matched successfully>
+NCCL version 2.27.5+cuda12.9
+2026-03-16 13:10:45.345 | INFO     | src.utils.distributed:loginfo0:86 - Number of trainable parameters: 676,735,504
+2026-03-16 13:10:45.354 | INFO     | src.utils.distributed:loginfo0:86 - Setting up the network and optimizer... 
+2026-03-16 13:10:45.383 | INFO     | src.utils.distributed:loginfo0:86 - Done!
+2026-03-16 13:10:45.383 | INFO     | src.utils.distributed:loginfo0:86 - Resuming from snapshot (if applicable)... 
+
+Loading GT samples for visualization:   0%|          | 0/16 [00:00<?, ?it/s]
+Loading GT samples for visualization: 100%|##########| 16/16 [00:00<00:00, 947.84it/s]
+2026-03-16 13:10:46.351 | INFO     | src.utils.distributed:loginfo0:86 - Done!
+Latent resolution: 1x32x32. Latent channels: 4.
+
+DistributedDataParallel                  Parameters   Buffers  Input Shape                 Output Shape       Datatype  GFLOPs 
+---                                      ---          ---      ---                         ---                ---       ---    
+module.model.x_embedder                  19,584       -        [2, 4, 32, 32]              [2, 256, 1152]     bfloat16  0.009  
+module.model.noise_labels_embedder       1,624,320    -        [2]                         [2, 1152]          bfloat16  -      
+module.model.noise_labels_next_embedder  1,624,320    -        [2]                         [2, 1152]          bfloat16  -      
+module.model.y_embedder                  1,153,152    -        [2]                         [2, 1152]          float32   -      
+module.model.blocks.0                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.1                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.2                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.3                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.4                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.5                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.6                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.7                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.8                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.9                    23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.10                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.11                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.12                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.13                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.14                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.15                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.16                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.17                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.18                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.19                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.20                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.21                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.22                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.23                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.24                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.25                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.26                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.blocks.27                   23,905,152   -        [2, 256, 1152] + [2, 1152]  [2, 256, 1152]     float32   8.174  
+module.model.final_layer                 2,674,960    -        [2, 256, 1152] + [2, 1152]  [2, 256, 16]       bfloat16  0.017  
+module.model                             294,912      -        [2, 1, 4, 32, 32]           [2, 1, 4, 32, 32]  bfloat16  -      
+module                                   83,653,863   8,193    [2, 1, 4, 32, 32] + [2]     [2, 1, 4, 32, 32]  float32   228.915
+---                                      ---          ---      ---                         ---                ---       ---    
+Total                                    760,389,367  8,193    -                           -                  -         457.824
+
+
+DiffusionAutoEncoder               Parameters  Buffers  Input Shape                Output Shape         Datatype  GFLOPs  
+---                                ---         ---      ---                        ---                  ---       ---     
+model.model.encoder.conv_in        3,584       -        [2, 3, 256, 256]           [2, 128, 256, 256]   bfloat16  0.453   
+model.model.encoder.down_blocks.0  738,944     -        [2, 128, 256, 256]         [2, 128, 128, 128]   bfloat16  -       
+model.model.encoder.down_blocks.1  2,690,304   -        [2, 128, 128, 128]         [2, 256, 64, 64]     bfloat16  -       
+model.model.encoder.down_blocks.2  10,754,560  -        [2, 256, 64, 64]           [2, 512, 32, 32]     bfloat16  -       
+model.model.encoder.down_blocks.3  9,443,328   -        [2, 512, 32, 32]           [2, 512, 32, 32]     bfloat16  -       
+model.model.encoder.mid_block      10,494,976  -        [2, 512, 32, 32]           [2, 512, 32, 32]     bfloat16  -       
+model.model.encoder.conv_norm_out  1,024       -        [2, 512, 32, 32]           [2, 512, 32, 32]     float32   -       
+model.model.encoder.conv_act       -           -        [2, 512, 32, 32]           [2, 512, 32, 32]     float32   -       
+model.model.encoder.conv_out       36,872      -        [2, 512, 32, 32]           [2, 8, 32, 32]       bfloat16  0.075   
+model.model.quant_conv             72          -        [2, 8, 32, 32]             [2, 8, 32, 32]       bfloat16  -       
+model                              49,490,199  -        [2, 1, 3, 256, 256]        -                    -         892.425 
+model.model.post_quant_conv        -           -        [2, 4, 32, 32]             [2, 4, 32, 32]       bfloat16  0.000   
+model.model.decoder.conv_in        -           -        [2, 4, 32, 32]             [2, 512, 32, 32]     bfloat16  -       
+model.model.decoder.mid_block      -           -        [2, 512, 32, 32]           [2, 512, 32, 32]     bfloat16  -       
+model.model.decoder.up_blocks.0    -           -        [2, 512, 32, 32]           [2, 512, 64, 64]     bfloat16  48.354  
+model.model.decoder.up_blocks.1    -           -        [2, 512, 64, 64]           [2, 512, 128, 128]   bfloat16  -       
+model.model.decoder.up_blocks.2    -           -        [2, 512, 128, 128]         [2, 256, 256, 256]   bfloat16  -       
+model.model.decoder.up_blocks.3    -           -        [2, 256, 256, 256]         [2, 128, 256, 256]   bfloat16  -       
+model.model.decoder.conv_norm_out  -           -        [2, 128, 256, 256]         [2, 128, 256, 256]   float32   -       
+model.model.decoder.conv_act       -           -        [2, 128, 256, 256]         [2, 128, 256, 256]   float32   -       
+model.model.decoder.conv_out       -           -        [2, 128, 256, 256]         [2, 3, 256, 256]     bfloat16  0.453   
+model                              -           -        [2, 1, 3, 256, 256]        [2, 1, 3, 256, 256]  bfloat16  892.425 
+<top-level>                        -           -        [2, 1, 3, 256, 256] + [2]  [2, 1, 3, 256, 256]  float32   892.425 
+---                                ---         ---      ---                        ---                  ---       ---     
+Total                              83,653,863  0        -                          -                    -         2726.612
+
+DistributedDataParallel(
+  (module): LatentDiffusion(
+    (autoencoder): DiffusionAutoEncoder(
+      (model): DiffusersAutoEncoderBackbone(
+        (model): AutoencoderKL(
+          (encoder): Encoder(
+            (conv_in): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (down_blocks): ModuleList(
+              (0): DownEncoderBlock2D(
+                (resnets): ModuleList(
+                  (0-1): 2 x ResnetBlock2D(
+                    (norm1): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+                (downsamplers): ModuleList(
+                  (0): Downsample2D(
+                    (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2))
+                  )
+                )
+              )
+              (1): DownEncoderBlock2D(
+                (resnets): ModuleList(
+                  (0): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                    (conv_shortcut): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+                  )
+                  (1): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+                (downsamplers): ModuleList(
+                  (0): Downsample2D(
+                    (conv): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2))
+                  )
+                )
+              )
+              (2): DownEncoderBlock2D(
+                (resnets): ModuleList(
+                  (0): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                    (conv_shortcut): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+                  )
+                  (1): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+                (downsamplers): ModuleList(
+                  (0): Downsample2D(
+                    (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2))
+                  )
+                )
+              )
+              (3): DownEncoderBlock2D(
+                (resnets): ModuleList(
+                  (0-1): 2 x ResnetBlock2D(
+                    (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+              )
+            )
+            (mid_block): UNetMidBlock2D(
+              (attentions): ModuleList(
+                (0): Attention(
+                  (group_norm): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (to_q): Linear(in_features=512, out_features=512, bias=True)
+                  (to_k): Linear(in_features=512, out_features=512, bias=True)
+                  (to_v): Linear(in_features=512, out_features=512, bias=True)
+                  (to_out): ModuleList(
+                    (0): Linear(in_features=512, out_features=512, bias=True)
+                    (1): Dropout(p=0.0, inplace=False)
+                  )
+                )
+              )
+              (resnets): ModuleList(
+                (0-1): 2 x ResnetBlock2D(
+                  (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (dropout): Dropout(p=0.0, inplace=False)
+                  (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  (nonlinearity): SiLU()
+                )
+              )
+            )
+            (conv_norm_out): GroupNorm(32, 512, eps=1e-06, affine=True)
+            (conv_act): SiLU()
+            (conv_out): Conv2d(512, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (decoder): Decoder(
+            (conv_in): Conv2d(4, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            (up_blocks): ModuleList(
+              (0-1): 2 x UpDecoderBlock2D(
+                (resnets): ModuleList(
+                  (0-2): 3 x ResnetBlock2D(
+                    (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+                (upsamplers): ModuleList(
+                  (0): Upsample2D(
+                    (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  )
+                )
+              )
+              (2): UpDecoderBlock2D(
+                (resnets): ModuleList(
+                  (0): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                    (conv1): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                    (conv_shortcut): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+                  )
+                  (1-2): 2 x ResnetBlock2D(
+                    (norm1): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+                (upsamplers): ModuleList(
+                  (0): Upsample2D(
+                    (conv): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  )
+                )
+              )
+              (3): UpDecoderBlock2D(
+                (resnets): ModuleList(
+                  (0): ResnetBlock2D(
+                    (norm1): GroupNorm(32, 256, eps=1e-06, affine=True)
+                    (conv1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                    (conv_shortcut): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+                  )
+                  (1-2): 2 x ResnetBlock2D(
+                    (norm1): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (norm2): GroupNorm(32, 128, eps=1e-06, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                  )
+                )
+              )
+            )
+            (mid_block): UNetMidBlock2D(
+              (attentions): ModuleList(
+                (0): Attention(
+                  (group_norm): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (to_q): Linear(in_features=512, out_features=512, bias=True)
+                  (to_k): Linear(in_features=512, out_features=512, bias=True)
+                  (to_v): Linear(in_features=512, out_features=512, bias=True)
+                  (to_out): ModuleList(
+                    (0): Linear(in_features=512, out_features=512, bias=True)
+                    (1): Dropout(p=0.0, inplace=False)
+                  )
+                )
+              )
+              (resnets): ModuleList(
+                (0-1): 2 x ResnetBlock2D(
+                  (norm1): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  (norm2): GroupNorm(32, 512, eps=1e-06, affine=True)
+                  (dropout): Dropout(p=0.0, inplace=False)
+                  (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                  (nonlinearity): SiLU()
+                )
+              )
+            )
+            (conv_norm_out): GroupNorm(32, 128, eps=1e-06, affine=True)
+            (conv_act): SiLU()
+            (conv_out): Conv2d(128, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (quant_conv): Conv2d(8, 8, kernel_size=(1, 1), stride=(1, 1))
+          (post_quant_conv): Conv2d(4, 4, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+    )
+    (model): SiT(
+      (x_embedder): PatchEmbed(
+        (proj): Conv2d(4, 1152, kernel_size=(2, 2), stride=(2, 2))
+        (norm): Identity()
+      )
+      (noise_labels_embedder): TimestepEmbedder(
+        (mlp): Sequential(
+          (0): Linear(in_features=256, out_features=1152, bias=True)
+          (1): SiLU()
+          (2): Linear(in_features=1152, out_features=1152, bias=True)
+        )
+      )
+      (noise_labels_next_embedder): TimestepEmbedder(
+        (mlp): Sequential(
+          (0): Linear(in_features=256, out_features=1152, bias=True)
+          (1): SiLU()
+          (2): Linear(in_features=1152, out_features=1152, bias=True)
+        )
+      )
+      (y_embedder): LabelEmbedder(
+        (embedding_table): Embedding(1001, 1152)
+      )
+      (blocks): ModuleList(
+        (0-27): 28 x SiTBlock(
+          (norm1): LayerNorm((1152,), eps=1e-06, elementwise_affine=False)
+          (attn): Attention(
+            (qkv): Linear(in_features=1152, out_features=3456, bias=True)
+            (q_norm): Identity()
+            (k_norm): Identity()
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=1152, out_features=1152, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (norm2): LayerNorm((1152,), eps=1e-06, elementwise_affine=False)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=1152, out_features=4608, bias=True)
+            (act): GELU(approximate='tanh')
+            (drop1): Dropout(p=0, inplace=False)
+            (norm): Identity()
+            (fc2): Linear(in_features=4608, out_features=1152, bias=True)
+            (drop2): Dropout(p=0, inplace=False)
+          )
+          (adaLN_modulation): Sequential(
+            (0): SiLU()
+            (1): Linear(in_features=1152, out_features=6912, bias=True)
+          )
+        )
+      )
+      (final_layer): FinalLayer(
+        (norm_final): LayerNorm((1152,), eps=1e-06, elementwise_affine=False)
+        (linear): Linear(in_features=1152, out_features=16, bias=True)
+        (adaLN_modulation): Sequential(
+          (0): SiLU()
+          (1): Linear(in_features=1152, out_features=2304, bias=True)
+        )
+      )
+    )
+  )
+)
+/mnt/ssd1/eun/2026/meanflow/alphaflow/env/lib/python3.11/site-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+2026-03-16 13:10:58.860 | INFO     | src.utils.distributed:loginfo0:86 - Computed LDM_autoencoder_stats/latents stats! mean_min: -0.7729, mean_mean: 0.2518, mean_max: 1.5979, mean_abs_min: 0.0004, mean_abs_mean: 0.4156, mean_abs_max: 1.5979, std_mean: 4.4834, std_min: 3.5149, std_max: 6.5316, min_min: -54.5000, max_max: 46.2500, num_samples_used: 2048
+2026-03-16 13:10:58.862 | INFO     | src.utils.distributed:loginfo0:86 - Training for 1200000 iterations...
+2026-03-16 13:10:58.862 | INFO     | src.utils.distributed:loginfo0:86 - Entering the main training loop...
+2026-03-16 13:10:58.863 | INFO     | src.utils.distributed:loginfo0:86 - Logging generated samples for _NFE_1_ode_sampling... 
+
+Loading sample conditioning for generation.:   0%|          | 0/16 [00:00<?, ?it/s]
+Loading sample conditioning for generation.: 100%|##########| 16/16 [00:00<00:00, 257.26it/s]
+2026-03-16 13:11:05.770 | INFO     | src.utils.distributed:loginfo0:86 - Logging generated samples for _NFE_2_ode_sampling... 
+
+Loading sample conditioning for generation.:   0%|          | 0/16 [00:00<?, ?it/s]
+Loading sample conditioning for generation.: 100%|##########| 16/16 [00:00<00:00, 5758.93it/s]
+2026-03-16 13:11:11.984 | INFO     | src.utils.distributed:loginfo0:86 - Logging generated samples for _NFE_2_consistency_sampling... 
+
+Loading sample conditioning for generation.:   0%|          | 0/16 [00:00<?, ?it/s]
+Loading sample conditioning for generation.: 100%|##########| 16/16 [00:00<00:00, 5453.79it/s]
+2026-03-16 13:11:18.040 | INFO     | src.utils.distributed:loginfo0:86 - done!
+[2026-03-16 13:11] step 1       tick 0     kimg 0.3       time 1m 29s       iter/sec 0.27    sec/kimg/gpu 28.89   samples/sec 69.230  samples/sec/gpu 34.615  maintenance 66.2   cpumem 4.47   gpumem 41.30  reserved 41.60  loss 0.988
+2026-03-16 13:11:21.742 | INFO     | src.utils.distributed:loginfo0:86 - Evaluating [joint_image_fd512_full] metrics for /mnt/ssd1/eun/2026/meanflow/alphaflow/experiments/0140-imagenet_folder_dit_alphaflow-meanflow-latentspace-XL-2-cfg-training-b0fef77-dirty/output ... 
+wandb: WARNING Tried to log to step 0 that is less than the current step 1. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|#2        | 1/8 [00:04<00:31,  4.47s/it]
+ 25%|##5       | 2/8 [00:08<00:24,  4.01s/it]
+ 38%|###7      | 3/8 [00:08<00:12,  2.52s/it]
+ 50%|#####     | 4/8 [00:09<00:07,  1.80s/it]
+ 62%|######2   | 5/8 [00:10<00:04,  1.42s/it]
+ 75%|#######5  | 6/8 [00:11<00:02,  1.18s/it]
+ 88%|########7 | 7/8 [00:11<00:01,  1.03s/it]
+100%|##########| 8/8 [00:12<00:00,  1.08it/s]
+100%|##########| 8/8 [00:12<00:00,  1.56s/it]
+{"results": {"fid512_full_NFE_1_ode_sampling": 407.86127297453856, "dinofid512_full_NFE_1_ode_sampling": 3012.2235391251324, "fcd512_full_NFE_1_ode_sampling": 93.73998432395194}, "metric": "joint_image_fd512_full", "total_time": 40.41420602798462, "total_time_str": "40s", "world_size": 2, "snapshot_path": "snapshot-00000001.pt", "timestamp": 1773634322.158165}
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|#2        | 1/8 [00:04<00:31,  4.56s/it]
+ 25%|##5       | 2/8 [00:08<00:26,  4.37s/it]
+ 38%|###7      | 3/8 [00:09<00:14,  2.86s/it]
+ 50%|#####     | 4/8 [00:10<00:08,  2.12s/it]
+ 62%|######2   | 5/8 [00:11<00:05,  1.72s/it]
+ 75%|#######5  | 6/8 [00:12<00:02,  1.46s/it]
+ 88%|########7 | 7/8 [00:13<00:01,  1.31s/it]
+100%|##########| 8/8 [00:14<00:00,  1.22s/it]
+100%|##########| 8/8 [00:14<00:00,  1.85s/it]
+{"results": {"fid512_full_NFE_2_ode_sampling": 407.86127297453856, "dinofid512_full_NFE_2_ode_sampling": 3012.2235391251324, "fcd512_full_NFE_2_ode_sampling": 93.73998432395194}, "metric": "joint_image_fd512_full", "total_time": 41.2377610206604, "total_time_str": "41s", "world_size": 2, "snapshot_path": "snapshot-00000001.pt", "timestamp": 1773634364.0194376}
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /mnt/ssd1/eun/2026/meanflow/alphaflow/.cache/torch/hub/facebookresearch_dinov2_main
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/20018 [00:00<?, ?it/s]
+  0%|          | 0/20018 [00:00<?, ?it/s]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|#2        | 1/8 [00:04<00:30,  4.30s/it]
+ 25%|##5       | 2/8 [00:08<00:23,  3.98s/it]
+ 38%|###7      | 3/8 [00:09<00:13,  2.70s/it]
+ 50%|#####     | 4/8 [00:10<00:08,  2.01s/it]
+ 62%|######2   | 5/8 [00:11<00:04,  1.61s/it]
+ 75%|#######5  | 6/8 [00:11<00:02,  1.36s/it]
+ 88%|########7 | 7/8 [00:12<00:01,  1.21s/it]
+100%|##########| 8/8 [00:13<00:00,  1.12s/it]
+100%|##########| 8/8 [00:13<00:00,  1.72s/it]
+{"results": {"fid512_full_NFE_2_consistency_sampling": 402.5625348863185, "dinofid512_full_NFE_2_consistency_sampling": 3114.5408005728486, "fcd512_full_NFE_2_consistency_sampling": 84.33742479243625}, "metric": "joint_image_fd512_full", "total_time": 37.79040837287903, "total_time_str": "38s", "world_size": 2, "snapshot_path": "snapshot-00000001.pt", "timestamp": 1773634402.6239731}
+2026-03-16 13:13:23.309 | INFO     | src.utils.distributed:loginfo0:86 - Saving the snapshot (reason: best_metric)... 
+2026-03-16 13:13:36.788 | INFO     | src.utils.distributed:loginfo0:86 - Saved!
+wandb: WARNING Tried to log to step 10 that is less than the current step 11. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 20 that is less than the current step 21. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 30 that is less than the current step 31. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 40 that is less than the current step 41. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 50 that is less than the current step 51. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 60 that is less than the current step 61. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 70 that is less than the current step 71. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 80 that is less than the current step 81. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 90 that is less than the current step 91. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 100 that is less than the current step 101. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 110 that is less than the current step 111. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 120 that is less than the current step 121. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 130 that is less than the current step 131. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 140 that is less than the current step 141. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 150 that is less than the current step 151. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 160 that is less than the current step 161. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 170 that is less than the current step 171. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 180 that is less than the current step 181. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 190 that is less than the current step 191. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 200 that is less than the current step 201. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 210 that is less than the current step 211. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 220 that is less than the current step 221. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 230 that is less than the current step 231. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 240 that is less than the current step 241. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 250 that is less than the current step 251. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 260 that is less than the current step 261. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 270 that is less than the current step 271. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 280 that is less than the current step 281. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 290 that is less than the current step 291. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 300 that is less than the current step 301. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 310 that is less than the current step 311. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 320 that is less than the current step 321. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 330 that is less than the current step 331. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 340 that is less than the current step 341. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 350 that is less than the current step 351. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 360 that is less than the current step 361. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 370 that is less than the current step 371. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 380 that is less than the current step 381. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 390 that is less than the current step 391. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 400 that is less than the current step 401. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 410 that is less than the current step 411. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 420 that is less than the current step 421. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 430 that is less than the current step 431. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 440 that is less than the current step 441. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 450 that is less than the current step 451. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 460 that is less than the current step 461. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 470 that is less than the current step 471. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 480 that is less than the current step 481. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 490 that is less than the current step 491. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[2026-03-16 13:30] step 501     tick 1     kimg 128.3     time 20m 59s      iter/sec 0.48    sec/kimg/gpu 16.15   samples/sec 123.812 samples/sec/gpu 61.906  maintenance 154.9  cpumem 4.35   gpumem 35.55  reserved 37.30  loss 0.988
+wandb: WARNING Tried to log to step 500 that is less than the current step 501. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 510 that is less than the current step 511. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 520 that is less than the current step 521. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 530 that is less than the current step 531. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 540 that is less than the current step 541. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 550 that is less than the current step 551. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 560 that is less than the current step 561. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 570 that is less than the current step 571. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 580 that is less than the current step 581. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 590 that is less than the current step 591. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 600 that is less than the current step 601. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 610 that is less than the current step 611. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 620 that is less than the current step 621. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 630 that is less than the current step 631. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 640 that is less than the current step 641. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 650 that is less than the current step 651. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 660 that is less than the current step 661. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 670 that is less than the current step 671. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 680 that is less than the current step 681. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 690 that is less than the current step 691. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 700 that is less than the current step 701. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 710 that is less than the current step 711. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 720 that is less than the current step 721. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 730 that is less than the current step 731. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 740 that is less than the current step 741. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 750 that is less than the current step 751. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 760 that is less than the current step 761. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 770 that is less than the current step 771. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 780 that is less than the current step 781. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 790 that is less than the current step 791. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 800 that is less than the current step 801. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 810 that is less than the current step 811. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 820 that is less than the current step 821. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 830 that is less than the current step 831. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 840 that is less than the current step 841. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 850 that is less than the current step 851. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 860 that is less than the current step 861. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 870 that is less than the current step 871. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 880 that is less than the current step 881. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 890 that is less than the current step 891. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 900 that is less than the current step 901. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 910 that is less than the current step 911. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 920 that is less than the current step 921. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 930 that is less than the current step 931. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 940 that is less than the current step 941. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 950 that is less than the current step 951. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 960 that is less than the current step 961. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 970 that is less than the current step 971. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 980 that is less than the current step 981. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 990 that is less than the current step 991. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+2026-03-16 13:48:00.843 | INFO     | src.utils.distributed:loginfo0:86 - Saving the snapshot (reason: step_latest)... 
+2026-03-16 13:48:13.284 | INFO     | src.utils.distributed:loginfo0:86 - Saved!
+[2026-03-16 13:48] step 1001    tick 2     kimg 256.3     time 38m 25s      iter/sec 0.48    sec/kimg/gpu 16.34   samples/sec 122.380 samples/sec/gpu 61.190  maintenance 0.0    cpumem 4.61   gpumem 35.56  reserved 41.03  loss 0.986
+wandb: WARNING Tried to log to step 1000 that is less than the current step 1001. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1010 that is less than the current step 1011. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1020 that is less than the current step 1021. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1030 that is less than the current step 1031. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1040 that is less than the current step 1041. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1050 that is less than the current step 1051. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1060 that is less than the current step 1061. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1070 that is less than the current step 1071. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1080 that is less than the current step 1081. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1090 that is less than the current step 1091. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1100 that is less than the current step 1101. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1110 that is less than the current step 1111. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1120 that is less than the current step 1121. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1130 that is less than the current step 1131. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1140 that is less than the current step 1141. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1150 that is less than the current step 1151. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1160 that is less than the current step 1161. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1170 that is less than the current step 1171. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1180 that is less than the current step 1181. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1190 that is less than the current step 1191. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1200 that is less than the current step 1201. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1210 that is less than the current step 1211. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1220 that is less than the current step 1221. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1230 that is less than the current step 1231. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1240 that is less than the current step 1241. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1250 that is less than the current step 1251. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1260 that is less than the current step 1261. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1270 that is less than the current step 1271. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1280 that is less than the current step 1281. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1290 that is less than the current step 1291. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1300 that is less than the current step 1301. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1310 that is less than the current step 1311. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1320 that is less than the current step 1321. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1330 that is less than the current step 1331. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1340 that is less than the current step 1341. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1350 that is less than the current step 1351. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1360 that is less than the current step 1361. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1370 that is less than the current step 1371. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1380 that is less than the current step 1381. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1390 that is less than the current step 1391. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1400 that is less than the current step 1401. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1410 that is less than the current step 1411. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1420 that is less than the current step 1421. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1430 that is less than the current step 1431. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1440 that is less than the current step 1441. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1450 that is less than the current step 1451. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1460 that is less than the current step 1461. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1470 that is less than the current step 1471. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1480 that is less than the current step 1481. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1490 that is less than the current step 1491. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[2026-03-16 14:05] step 1501    tick 3     kimg 384.3     time 55m 36s      iter/sec 0.48    sec/kimg/gpu 16.12   samples/sec 124.072 samples/sec/gpu 62.036  maintenance 0.0    cpumem 4.34   gpumem 35.57  reserved 37.57  loss 0.984
+wandb: WARNING Tried to log to step 1500 that is less than the current step 1501. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1510 that is less than the current step 1511. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1520 that is less than the current step 1521. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1530 that is less than the current step 1531. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1540 that is less than the current step 1541. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1550 that is less than the current step 1551. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1560 that is less than the current step 1561. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1570 that is less than the current step 1571. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1580 that is less than the current step 1581. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1590 that is less than the current step 1591. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1600 that is less than the current step 1601. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1610 that is less than the current step 1611. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1620 that is less than the current step 1621. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1630 that is less than the current step 1631. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1640 that is less than the current step 1641. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1650 that is less than the current step 1651. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1660 that is less than the current step 1661. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1670 that is less than the current step 1671. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1680 that is less than the current step 1681. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1690 that is less than the current step 1691. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1700 that is less than the current step 1701. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1710 that is less than the current step 1711. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1720 that is less than the current step 1721. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1730 that is less than the current step 1731. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1740 that is less than the current step 1741. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1750 that is less than the current step 1751. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1760 that is less than the current step 1761. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1770 that is less than the current step 1771. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1780 that is less than the current step 1781. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1790 that is less than the current step 1791. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1800 that is less than the current step 1801. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1810 that is less than the current step 1811. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1820 that is less than the current step 1821. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1830 that is less than the current step 1831. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1840 that is less than the current step 1841. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1850 that is less than the current step 1851. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1860 that is less than the current step 1861. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1870 that is less than the current step 1871. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1880 that is less than the current step 1881. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1890 that is less than the current step 1891. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1900 that is less than the current step 1901. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1910 that is less than the current step 1911. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1920 that is less than the current step 1921. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1930 that is less than the current step 1931. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1940 that is less than the current step 1941. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1950 that is less than the current step 1951. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1960 that is less than the current step 1961. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1970 that is less than the current step 1971. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1980 that is less than the current step 1981. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 1990 that is less than the current step 1991. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+2026-03-16 14:23:00.707 | INFO     | src.utils.distributed:loginfo0:86 - Saving the snapshot (reason: step_latest)... 
+2026-03-16 14:23:12.251 | INFO     | src.utils.distributed:loginfo0:86 - Saved!
+[2026-03-16 14:23] step 2001    tick 4     kimg 512.3     time 1h 13m 24s   iter/sec 0.47    sec/kimg/gpu 16.69   samples/sec 119.847 samples/sec/gpu 59.924  maintenance 0.0    cpumem 4.60   gpumem 35.57  reserved 37.56  loss 0.983
+wandb: WARNING Tried to log to step 2000 that is less than the current step 2001. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2010 that is less than the current step 2011. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2020 that is less than the current step 2021. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2030 that is less than the current step 2031. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2040 that is less than the current step 2041. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2050 that is less than the current step 2051. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2060 that is less than the current step 2061. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2070 that is less than the current step 2071. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2080 that is less than the current step 2081. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2090 that is less than the current step 2091. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2100 that is less than the current step 2101. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2110 that is less than the current step 2111. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2120 that is less than the current step 2121. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2130 that is less than the current step 2131. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2140 that is less than the current step 2141. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2150 that is less than the current step 2151. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2160 that is less than the current step 2161. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2170 that is less than the current step 2171. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2180 that is less than the current step 2181. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2190 that is less than the current step 2191. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2200 that is less than the current step 2201. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2210 that is less than the current step 2211. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+wandb: WARNING Tried to log to step 2220 that is less than the current step 2221. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.

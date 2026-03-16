@@ -1,0 +1,85 @@
+defaults:
+  - recflow.yaml
+  - _self_
+
+name: alphaflow
+target: src.training.loss.AlphaFlowLoss
+
+use_adaptive_loss: true
+adaptive_loss_weight_eps: 0.001
+
+time_sampling_fm: # Distribution when t_next == t
+  timestep_distrib_type: logit_norm
+  scale: 1.0
+  location: -0.4
+  eps: 0
+  max: 1.0
+  min: 0.0
+
+distrib_t_t_next_mf: # Distribution of t_next and t when t_next != t
+  type: minmax
+  curriculum:
+    total_step: 400000
+    steepness: 6.0
+    kappa: 0.5
+    beta: 8
+  time_sampling_mf_t:
+    timestep_distrib_type: logit_norm
+    scale: 1.0
+    location: -0.4
+    eps: 0
+    max: 1.0
+    min: 0.0
+  time_sampling_mf_t_next:
+    timestep_distrib_type: logit_norm
+    scale: 1.0
+    location: -0.4
+    eps: 0
+    max: 1.0
+    min: 0.0
+    delta_size: ~
+  time_sampling_mf_t_delta:
+    type: none  # delta_max_search
+    num_bins: 64 
+    delta_init: 0.0
+    update_step: 1000
+    threshold: 0.0005
+    step: 0.03
+    is_delta_lower_bound: false
+    init_lower_bound_step: 0
+    end_lower_bound_step: 400000
+
+ratio_fm: # Schedule for % t_next == t
+  scheduler: constant
+  initial_value: 0.75
+  end_value: 0.75
+  change_init_steps: 0
+  change_end_steps: 0
+  gamma: 1.0
+  clamp_value: 0.0
+  up_clamp_value: ~
+
+alpha: # Schedule for alpha
+  scheduler: constant
+  initial_value: 0.0
+  end_value: 0.0
+  change_init_steps: 0
+  change_end_steps: 0
+  gamma: 1.0
+  clamp_value: 0.0
+  discrete_training: false
+  up_clamp_value: ~
+
+cfg_params: # Cfg training params
+  omega: 1.0
+  kappa: 0.0
+  t_min: 0.0
+  t_max: 1.0
+
+max_steps: ${training.max_steps}
+
+clamp_utgt: 4.0
+
+loss_per_delta: false
+is_grad_csim: false
+is_grad_norm: false

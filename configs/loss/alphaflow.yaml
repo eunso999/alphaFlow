@@ -1,0 +1,104 @@
+defaults:
+  - recflow.yaml
+  - _self_
+
+name: alphaflow
+target: src.training.loss.AlphaFlowLoss
+
+use_adaptive_loss: true
+adaptive_loss_weight_eps: 0.001
+
+consistency_curriculum:
+  use_curriculum_sampling: true  # if false, fall back to AlphaFlowLoss.sample_timesteps_mf (ignores bin max_delta)
+  num_bins: 256
+  init_max_delta: 0.05
+  step_size: 0.01
+  consistency_threshold: 0.001
+  update_freq: 100
+  probe_batch_size: 256
+  error_space: x_space  # v_space | x_space
+  start_max_delta_iter: ~  # if set, linearly increase max_delta floor from init_max_delta → 1.0
+  end_max_delta_iter: ~    # over [start_max_delta_iter, end_max_delta_iter], regardless of error
+  use_linear_floor: true   # if false, skip the clamp_(min=linear_floor) even when floor is computed
+  bin_mode: t              # t: bin by t (delta extends downward); t_next: bin by t_next (delta extends upward)
+
+  analysis:
+    enabled: false           # set true to activate the consistency sweep
+    freq: 500               # run every N steps
+    delta_step: 0.05         # sweep delta from delta_step to 1.0 in this increment
+    probe_batch_size: 256     # samples per bin during the sweep
+    num_bins_stride: 1       # print every N-th bin (1 = all 256 bins)
+
+time_sampling_fm: # Distribution when t_next == t
+  timestep_distrib_type: logit_norm
+  scale: 1.0
+  location: -0.4
+  eps: 0
+  max: 1.0
+  min: 0.0
+
+distrib_t_t_next_mf: # Distribution of t_next and t when t_next != t
+  type: minmax
+  curriculum:
+    total_step: 400000
+    steepness: 6.0
+    kappa: 0.5
+    beta: 8
+  time_sampling_mf_t:
+    timestep_distrib_type: logit_norm
+    scale: 1.0
+    location: -0.4
+    eps: 0
+    max: 1.0
+    min: 0.0
+  time_sampling_mf_t_next:
+    timestep_distrib_type: logit_norm
+    scale: 1.0
+    location: -0.4
+    eps: 0
+    max: 1.0
+    min: 0.0
+    delta_size: ~
+  time_sampling_mf_t_delta:
+    type: none  # delta_max_search
+    num_bins: 64 
+    delta_init: 0.0
+    update_step: 1000
+    threshold: 0.0005
+    step: 0.03
+    is_delta_lower_bound: false
+    init_lower_bound_step: 0
+    end_lower_bound_step: 400000
+
+ratio_fm: # Schedule for % t_next == t
+  scheduler: constant
+  initial_value: 0.75
+  end_value: 0.75
+  change_init_steps: 0
+  change_end_steps: 0
+  gamma: 1.0
+  clamp_value: 0.0
+  up_clamp_value: ~
+
+alpha: # Schedule for alpha
+  scheduler: constant
+  initial_value: 0.0
+  end_value: 0.0
+  change_init_steps: 0
+  change_end_steps: 0
+  gamma: 1.0
+  clamp_value: 0.0
+  discrete_training: false
+  up_clamp_value: ~
+
+cfg_params: # Cfg training params
+  omega: 1.0
+  kappa: 0.0
+  t_min: 0.0
+  t_max: 1.0
+
+max_steps: ${training.max_steps}
+
+clamp_utgt: 4.0
+
+loss_per_delta: false
